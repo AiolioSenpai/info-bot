@@ -46,7 +46,7 @@ def get_closest_event(event_name, tips_dict, threshold=60):
     return None
 
 def format_event_response(event_name, event_data):
-    reply = f"Ah, I see you seek advice on **{event_name.title()}**. Very well, here are some valuable insights:\n\n"
+    reply = f"You seek knowledge on **{event_name.title()}**... How predictably desperate.\nVery well, here is what you require:\n\n"
     
     # Handle tips (string or list)
     if isinstance(event_data.get("tips"), str):
@@ -89,13 +89,23 @@ def format_event_response(event_name, event_data):
                             for idx, tip in enumerate(strategy_data["Tips"], 1):
                                 reply += f"    {idx}. {tip}\n"
     
-    reply += "\nDo take these to heart; one must always be prepared. I trust this will serve you well.\n\n"
+    reply += "\nDo try not to waste this information, as you so often waste opportunities.\n\n"
     
-    # Add structure formatting
+    # Add structure formatting with detailed combo_recommendations
     reply += f"**Structure of {event_name.title()}**\n\n"
     for key, value in event_data.items():
         reply += f"**{key}**\n"
-        if isinstance(value, str):
+        if key == "combo_recommendations":
+            reply += "- Type: Dictionary\n- Content:\n"
+            for sub_key, sub_value in value.items():
+                reply += f"  - {sub_key}:\n"
+                for inner_key, inner_value in sub_value.items():
+                    if isinstance(inner_value, list):
+                        inner_content = ", ".join(inner_value)
+                        reply += f"    - {inner_key}: List - {inner_content}\n"
+                    else:
+                        reply += f"    - {inner_key}: {inner_value}\n"
+        elif isinstance(value, str):
             reply += f"- Type: String\n- Content: {value}\n"
         elif isinstance(value, list):
             reply += f"- Type: List\n- Content:\n"
@@ -119,8 +129,8 @@ def format_event_response(event_name, event_data):
     return reply
 
 def mcgonagall_style_no_match():
-    return ("Hmm, I’m afraid I don’t have any tips for that particular occasion. "
-            "Perhaps you could clarify your request? Precision is important, after all.")
+    return ("I find it astonishing that you managed to spell that so poorly even a simple matching charm fails. "
+            "Clarify your request before wasting more of my time.")
 
 def respond_to_event(user_input):
     event_name = user_input.strip().lower()
@@ -166,7 +176,7 @@ async def on_ready():
 @bot.command(name="tip")
 async def tip(ctx, *, event_name: str):
     if ctx.channel.id != CHANNEL_ID:
-        await ctx.send("Please use this command in the designated channel.")
+        await ctx.send("Kindly confine your use of this command to the designated channel, unless you wish to attract unnecessary attention.")
         return
     response = respond_to_event(event_name)
     response = sanitize_response(response)
