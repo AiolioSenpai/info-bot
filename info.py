@@ -89,41 +89,7 @@ def format_event_response(event_name, event_data):
                             for idx, tip in enumerate(strategy_data["Tips"], 1):
                                 reply += f"    {idx}. {tip}\n"
     
-    reply += "\nDo try not to waste this information, as you so often waste opportunities.\n\n"
-    
-    # Add structure formatting with detailed combo_recommendations
-    reply += f"**Structure of {event_name.title()}**\n\n"
-    for key, value in event_data.items():
-        reply += f"**{key}**\n"
-        if key == "combo_recommendations":
-            reply += "- Type: Dictionary\n- Content:\n"
-            for sub_key, sub_value in value.items():
-                reply += f"  - {sub_key}:\n"
-                for inner_key, inner_value in sub_value.items():
-                    if isinstance(inner_value, list):
-                        inner_content = ", ".join(inner_value)
-                        reply += f"    - {inner_key}: List - {inner_content}\n"
-                    else:
-                        reply += f"    - {inner_key}: {inner_value}\n"
-        elif isinstance(value, str):
-            reply += f"- Type: String\n- Content: {value}\n"
-        elif isinstance(value, list):
-            reply += f"- Type: List\n- Content:\n"
-            for idx, item in enumerate(value, 1):
-                if isinstance(item, dict):
-                    reply += f"  {idx}. Dictionary with keys: {', '.join(item.keys())}\n"
-                else:
-                    reply += f"  {idx}. {item}\n"
-        elif isinstance(value, dict):
-            reply += f"- Type: Dictionary\n- Content:\n"
-            for sub_key, sub_value in value.items():
-                if isinstance(sub_value, dict):
-                    reply += f"  - {sub_key}: Dictionary with keys: {', '.join(sub_value.keys())}\n"
-                elif isinstance(sub_value, list):
-                    reply += f"  - {sub_key}: List of {len(sub_value)} items\n"
-                else:
-                    reply += f"  - {sub_key}: {sub_value}\n"
-        reply += "\n"
+    reply += "\nDo try not to waste this information, as you so often waste opportunities."
     
     print("Response to send:", repr(reply))  # Debug output
     return reply
