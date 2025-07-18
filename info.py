@@ -170,7 +170,7 @@ async def reply(ctx, *, message: str):
         await ctx.send("I lack permission to delete messages in this channel.")
         return
     # Send the message to the reply channel
-    await reply_channel.send(f"{ctx.author.mention} said: {message}")
+    await reply_channel.send(f"{message}")
 
 @reply.error
 async def reply_error(ctx, error):
