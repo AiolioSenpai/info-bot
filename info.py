@@ -10,6 +10,7 @@ import re
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 CHANNEL_ID = int(os.getenv("DISCORD_CHANNEL_ID"))
+REPLY_CHANNEL_ID = int(os.getenv("DISCORD_REPLY_CHANNEL_ID"))  # New channel ID for replies
 
 # Load and sanitize tips JSON
 with open("tips.json") as f:
@@ -148,5 +149,34 @@ async def tip(ctx, *, event_name: str):
     response = respond_to_event(event_name)
     response = sanitize_response(response)
     await send_long_message(ctx, response)
+
+@bot.command(name="reply")
+@commands.has_permissions(administrator=True)
+async def reply(ctx, *, message: str):
+    print(f"Processing !reply command from {ctx.author} at {ctx.channel.id}")
+    # Check if command is used in the reply channel
+    if ctx.channel.id != REPLY_CHANNEL_ID:
+        await ctx.send("The !reply command can only be used in the designated reply channel.")
+        return
+    # Get the reply channel
+    reply_channel = bot.get_channel(REPLY_CHANNEL_ID)
+    if not reply_channel:
+        await ctx.send("The reply channel is not properly configured. Please contact the server administrator.")
+        return
+    # Delete the original message
+    try:
+        await ctx.message.delete()
+    except discord.errors.Forbidden:
+        await ctx.send("I lack permission to delete messages in this channel.")
+        return
+    # Send the message to the reply channel
+    await reply_channel.send(f"{ctx.author.mention} said: {message}")
+
+@reply.error
+async def reply_error(ctx, error):
+    if isinstance(error, commands.MissingPermissions):
+        await ctx.send("You must be an administrator to use the !reply command.")
+    else:
+        await ctx.send("An error occurred while processing the !reply command.")
 
 bot.run(TOKEN)
