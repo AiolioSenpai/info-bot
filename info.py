@@ -175,6 +175,7 @@ async def on_ready():
 
 @bot.command(name="tip")
 async def tip(ctx, *, event_name: str):
+    print(f"Processing !tip command for {event_name} from {ctx.author} at {ctx.channel.id}")
     if ctx.channel.id != CHANNEL_ID:
         await ctx.send("Kindly confine your use of this command to the designated channel, unless you wish to attract unnecessary attention.")
         return
