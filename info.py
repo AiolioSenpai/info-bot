@@ -23,10 +23,11 @@ with open("tips.json") as f:
         if "combo_recommendations" in data:
             for strategy, combo in data["combo_recommendations"].items():
                 combo["strategy"] = combo["strategy"].replace('\r', '').strip()
-                if isinstance(combo.get("masks"), list):
-                    combo["masks"] = [mask.replace('\r', '').strip() for mask in combo["masks"]]
-                else:
-                    combo["masks"] = combo["masks"].replace('\r', '').strip()
+                if "masks" in combo:
+                    if isinstance(combo["masks"], list):
+                        combo["masks"] = [mask.replace('\r', '').strip() for mask in combo["masks"]]
+                    else:
+                        combo["masks"] = combo["masks"].replace('\r', '').strip()
                 combo["remark"] = combo["remark"].replace('\r', '').strip()
         # Special handling for pet_race nested structures
         if event == "pet_race":
@@ -63,11 +64,12 @@ def format_event_response(event_name, event_data):
         reply += "\n**Combo Recommendations:**\n"
         for strategy, combo in combos.items():
             reply += f"- **{combo['strategy']}**\n"
-            if isinstance(combo.get("masks"), list):
-                masks = ", ".join(combo["masks"])
-            else:
-                masks = combo["masks"]
-            reply += f"  - Masks: {masks}\n"
+            if "masks" in combo:
+                if isinstance(combo.get("masks"), list):
+                    masks = ", ".join(combo["masks"])
+                else:
+                    masks = combo["masks"]
+                reply += f"  - Masks: {masks}\n"
             reply += f"  - Remark: {combo['remark']}\n"
     
     # Handle pet_race special case
@@ -80,7 +82,7 @@ def format_event_response(event_name, event_data):
                         reply += f"- **{strategy}**\n"
                         if "Skills" in strategy_data:
                             reply += f"  - Skills: {', '.join(strategy_data['Skills'])}\n"
-                        if "RecommendedSkills" in structure_data:
+                        if "RecommendedSkills" in strategy_data:
                             reply += f"  - Recommended Skills: {', '.join(strategy_data['RecommendedSkills'])}\n"
                         if "Tips" in strategy_data:
                             reply += "  - Tips:\n"
