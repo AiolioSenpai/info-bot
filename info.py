@@ -80,14 +80,39 @@ def format_event_response(event_name, event_data):
                         reply += f"- **{strategy}**\n"
                         if "Skills" in strategy_data:
                             reply += f"  - Skills: {', '.join(strategy_data['Skills'])}\n"
-                        if "RecommendedSkills" in strategy_data:
+                        if "RecommendedSkills" in structure_data:
                             reply += f"  - Recommended Skills: {', '.join(strategy_data['RecommendedSkills'])}\n"
                         if "Tips" in strategy_data:
                             reply += "  - Tips:\n"
                             for idx, tip in enumerate(strategy_data["Tips"], 1):
                                 reply += f"    {idx}. {tip}\n"
     
-    reply += "\nDo take these to heart; one must always be prepared. I trust this will serve you well."
+    reply += "\nDo take these to heart; one must always be prepared. I trust this will serve you well.\n\n"
+    
+    # Add structure formatting
+    reply += f"**Structure of {event_name.title()}**\n\n"
+    for key, value in event_data.items():
+        reply += f"**{key}**\n"
+        if isinstance(value, str):
+            reply += f"- Type: String\n- Content: {value}\n"
+        elif isinstance(value, list):
+            reply += f"- Type: List\n- Content:\n"
+            for idx, item in enumerate(value, 1):
+                if isinstance(item, dict):
+                    reply += f"  {idx}. Dictionary with keys: {', '.join(item.keys())}\n"
+                else:
+                    reply += f"  {idx}. {item}\n"
+        elif isinstance(value, dict):
+            reply += f"- Type: Dictionary\n- Content:\n"
+            for sub_key, sub_value in value.items():
+                if isinstance(sub_value, dict):
+                    reply += f"  - {sub_key}: Dictionary with keys: {', '.join(sub_value.keys())}\n"
+                elif isinstance(sub_value, list):
+                    reply += f"  - {sub_key}: List of {len(sub_value)} items\n"
+                else:
+                    reply += f"  - {sub_key}: {sub_value}\n"
+        reply += "\n"
+    
     print("Response to send:", repr(reply))  # Debug output
     return reply
 
