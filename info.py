@@ -172,29 +172,33 @@ async def reply_error(ctx, error):
 async def on_message(message):
     if message.author.bot:
         return
-    # DM relaying
-    if isinstance(message.channel, discord.DMChannel):
-        owner = await bot.fetch_user(OWNER_ID)  # Replace YOUR_OWNER_ID below
-        if owner:
-            embed = discord.Embed(
-                title="📩 New DM Received",
-                description=message.content or "*No text content*",
-                color=discord.Color.blue()
-            )
-            embed.set_author(name=str(message.author), icon_url=message.author.display_avatar.url)
-            embed.set_footer(text=f"User ID: {message.author.id}")
-            if message.attachments:
-                attachments = "\n".join(att.url for att in message.attachments)
-                embed.add_field(name="Attachments", value=attachments, inline=False)
+     #=== DM Handling ===
+    if message.guild is None:
+        if message.author.id != OWNER_ID:
+            owner = await bot.fetch_user(OWNER_ID)
+            await owner.send(f"📨 New DM from **{message.author}** (ID: {message.author.id}):\n{message.content}")
+            return
 
-            try:
-                await owner.send(embed=embed)
-                # Optionally acknowledge the sender
-                await message.channel.send("Your message has been received and relayed to the owner. Thank you!")
-            except discord.Forbidden:
-                print("Cannot send DM to owner. Check privacy settings.")
-        else:
-            print("Owner user not found.")
+        # Owner sent a DM to the bot - parse reply command
+        if message.author.id == OWNER_ID:
+            if message.content.startswith("reply"):
+                parts = message.content.split(" ", 2)
+                if len(parts) < 3:
+                    await message.channel.send("Usage: reply <USER_ID> <message>")
+                    return
+                try:
+                    user_id = int(parts[1])
+                except ValueError:
+                    await message.channel.send("Invalid USER_ID. It must be an integer.")
+                    return
+                user_message = parts[2]
+                try:
+                    user = await bot.fetch_user(user_id)
+                    await user.send(user_message)
+                    await message.channel.send(f"✅ Message sent to {user} (ID: {user_id})")
+                except Exception as e:
+                    await message.channel.send(f"❌ Failed to send message: {e}")
+            return
     await bot.process_commands(message)
 
 bot.run(TOKEN)
