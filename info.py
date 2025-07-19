@@ -11,7 +11,7 @@ load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 CHANNEL_ID = int(os.getenv("DISCORD_CHANNEL_ID"))
 REPLY_CHANNEL_ID = int(os.getenv("DISCORD_REPLY_CHANNEL_ID"))
-DM_RELAY_CHANNEL_ID = int(os.getenv("DISCORD_DM_RELAY_CHANNEL_ID", REPLY_CHANNEL_ID))  # fallback to REPLY_CHANNEL_ID if not set
+OWNER_ID = int(os.getenv("OWNER_ID")) 
 
 # Load and sanitize tips JSON
 with open("tips.json") as f:
@@ -174,20 +174,27 @@ async def on_message(message):
         return
     # DM relaying
     if isinstance(message.channel, discord.DMChannel):
-        relay_channel = bot.get_channel(DM_RELAY_CHANNEL_ID)
-        if relay_channel:
+        owner = await bot.fetch_user(OWNER_ID)  # Replace YOUR_OWNER_ID below
+        if owner:
             embed = discord.Embed(
                 title="📩 New DM Received",
-                description=message.content,
+                description=message.content or "*No text content*",
                 color=discord.Color.blue()
             )
             embed.set_author(name=str(message.author), icon_url=message.author.display_avatar.url)
             embed.set_footer(text=f"User ID: {message.author.id}")
-            await relay_channel.send(embed=embed)
-            # Optionally acknowledge user:
-            await message.channel.send("Your message has been received and relayed. Thank you.")
+            if message.attachments:
+                attachments = "\n".join(att.url for att in message.attachments)
+                embed.add_field(name="Attachments", value=attachments, inline=False)
+
+            try:
+                await owner.send(embed=embed)
+                # Optionally acknowledge the sender
+                await message.channel.send("Your message has been received and relayed to the owner. Thank you!")
+            except discord.Forbidden:
+                print("Cannot send DM to owner. Check privacy settings.")
         else:
-            print("DM relay channel not found.")
+            print("Owner user not found.")
     await bot.process_commands(message)
 
 bot.run(TOKEN)
