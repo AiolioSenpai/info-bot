@@ -10,15 +10,15 @@ import re
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 CHANNEL_ID = int(os.getenv("DISCORD_CHANNEL_ID"))
-REPLY_CHANNEL_ID = int(os.getenv("DISCORD_REPLY_CHANNEL_ID"))  # New channel ID for replies
+REPLY_CHANNEL_ID = int(os.getenv("DISCORD_REPLY_CHANNEL_ID"))
+DM_RELAY_CHANNEL_ID = int(os.getenv("DISCORD_DM_RELAY_CHANNEL_ID", REPLY_CHANNEL_ID))  # fallback to REPLY_CHANNEL_ID if not set
 
 # Load and sanitize tips JSON
 with open("tips.json") as f:
     tips = json.load(f)
-    # Sanitize strings to remove unwanted control characters, preserve intended newlines
     for event, data in tips.items():
         if isinstance(data.get("tips"), str):
-            data["tips"] = data["tips"].strip()  # Keep as string, remove leading/trailing whitespace
+            data["tips"] = data["tips"].strip()
         elif isinstance(data.get("tips"), list):
             data["tips"] = [tip.replace('\r', '').strip() for tip in data["tips"]]
         if "combo_recommendations" in data:
@@ -30,7 +30,6 @@ with open("tips.json") as f:
                     else:
                         combo["masks"] = combo["masks"].replace('\r', '').strip()
                 combo["remark"] = combo["remark"].replace('\r', '').strip()
-        # Special handling for pet_race nested structures
         if event == "pet_race":
             for sub_event, sub_data in data.items():
                 if isinstance(sub_data, dict):
@@ -48,8 +47,6 @@ def get_closest_event(event_name, tips_dict, threshold=60):
 
 def format_event_response(event_name, event_data):
     reply = f"You seek knowledge on **{event_name.title()}**... How predictably desperate.\nVery well, here is what you require:\n\n"
-    
-    # Handle tips (string or list)
     if isinstance(event_data.get("tips"), str):
         reply += "**Tips:**\n" + event_data["tips"] + "\n"
     elif isinstance(event_data.get("tips"), list):
@@ -58,8 +55,6 @@ def format_event_response(event_name, event_data):
             reply += f"{idx}. {tip}\n"
     else:
         reply += "**Tips:**\nNo tips available.\n"
-    
-    # Handle combo_recommendations (dictionary)
     combos = event_data.get("combo_recommendations", {})
     if combos:
         reply += "\n**Combo Recommendations:**\n"
@@ -72,8 +67,6 @@ def format_event_response(event_name, event_data):
                     masks = combo["masks"]
                 reply += f"  - Masks: {masks}\n"
             reply += f"  - Remark: {combo['remark']}\n"
-    
-    # Handle pet_race special case
     if event_name.lower() == "pet_race":
         reply += "\n**Pet Race Strategies:**\n"
         for sub_event, sub_data in event_data.items():
@@ -89,10 +82,8 @@ def format_event_response(event_name, event_data):
                             reply += "  - Tips:\n"
                             for idx, tip in enumerate(strategy_data["Tips"], 1):
                                 reply += f"    {idx}. {tip}\n"
-    
     reply += "\nDo try not to waste this information, as you so often waste opportunities."
-    
-    print("Response to send:", repr(reply))  # Debug output
+    print("Response to send:", repr(reply))
     return reply
 
 def mcgonagall_style_no_match():
@@ -109,9 +100,8 @@ def respond_to_event(user_input):
         return mcgonagall_style_no_match()
 
 def sanitize_response(text):
-    # Preserve intended newlines, remove unwanted control characters
     text = ''.join(c for c in text if c.isprintable() or c == '\n')
-    text = re.sub(r'\n{3,}', '\n\n', text)  # Collapse excessive newlines
+    text = re.sub(r'\n{3,}', '\n\n', text)
     return text.strip()
 
 async def send_long_message(ctx, response):
@@ -133,6 +123,8 @@ async def send_long_message(ctx, response):
 
 intents = discord.Intents.default()
 intents.message_content = True
+intents.members = True
+intents.dm_messages = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
@@ -154,22 +146,18 @@ async def tip(ctx, *, event_name: str):
 @commands.has_permissions(administrator=True)
 async def reply(ctx, *, message: str):
     print(f"Processing !reply command from {ctx.author} at {ctx.channel.id}")
-    # Check if command is used in the reply channel
     if ctx.channel.id != REPLY_CHANNEL_ID:
         await ctx.send("The !reply command can only be used in the designated reply channel.")
         return
-    # Get the reply channel
     reply_channel = bot.get_channel(REPLY_CHANNEL_ID)
     if not reply_channel:
         await ctx.send("The reply channel is not properly configured. Please contact the server administrator.")
         return
-    # Delete the original message
     try:
         await ctx.message.delete()
     except discord.errors.Forbidden:
         await ctx.send("I lack permission to delete messages in this channel.")
         return
-    # Send the message to the reply channel
     await reply_channel.send(f"{message}")
 
 @reply.error
@@ -178,5 +166,28 @@ async def reply_error(ctx, error):
         await ctx.send("You must be an administrator to use the !reply command.")
     else:
         await ctx.send("An error occurred while processing the !reply command.")
+
+# === DM RELAYING LOGIC ===
+@bot.event
+async def on_message(message):
+    if message.author.bot:
+        return
+    # DM relaying
+    if isinstance(message.channel, discord.DMChannel):
+        relay_channel = bot.get_channel(DM_RELAY_CHANNEL_ID)
+        if relay_channel:
+            embed = discord.Embed(
+                title="📩 New DM Received",
+                description=message.content,
+                color=discord.Color.blue()
+            )
+            embed.set_author(name=str(message.author), icon_url=message.author.display_avatar.url)
+            embed.set_footer(text=f"User ID: {message.author.id}")
+            await relay_channel.send(embed=embed)
+            # Optionally acknowledge user:
+            await message.channel.send("Your message has been received and relayed. Thank you.")
+        else:
+            print("DM relay channel not found.")
+    await bot.process_commands(message)
 
 bot.run(TOKEN)
