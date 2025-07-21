@@ -1,5 +1,5 @@
 {
-    "masquerade_ball": {
+    "Masquerade Ball": {
     "tips": "🔹 Gain 2 attempts per 30 min (max 15). Win=100 pts, draw=75, loss=50. +12 for charm lead, +15 for being alliance/server lead.\n🔹 Masks upgrade blue→purple→gold. Choose 1‑2 blues, 2‑3 purples, 1‑2 golds. Balance buffs, debuffs, backups.\n🔹 Test combos in practice: start with Parrot, Gargoyle, Anubis or Chameleon, Owl, Hippogriff + Raccoon/Whale.\n🔹 Don't follow in-game tips blindly—iterate using practice mode and mimic top-ranked players.",
     "combo_recommendations": {
       "standard": {
@@ -67,7 +67,7 @@
       }
     ]
   },
-    "nibelungen_treasure": {
+    "Nibelungen Treasure": {
     "tips": "🪓 **Map Exploration**: Use pickaxes (1 stamina, recovers every 30 min) to mine stones and reveal the map. Each mine grants 2 points. Shared tiles revealed by allies help reduce stamina waste.\n⚔️ **NPC Types**: There are 6 NPC types, higher-level NPCs grant higher points and rewards. Try to prioritize Dwarf Kings and high-level NPCs for better gains.\n🛡️ **Use of Knights**: Each knight can attack once per day. Use 'Orders of Challenge' to reuse knights. You can buff your knights (5%-100% attack) using gold to defeat strong NPCs faster.\n👑 **Defeating Dwarf Kings**: Defeating them resets some tiles back to stones, requiring re-mining. Plan knight usage and stamina carefully when attempting Dwarf Kings.\n🗝️ **Chests and Rewards**: Chests provide points and valuable resources, requiring keys (Bronze, Silver, Gold) obtained by killing NPCs or from the shop.\n🏆 **Optimization Tips**: Steal kills to get kill bonuses, open as many chests as possible, collaborate with server mates for strong NPCs, and use gold buffs strategically if aiming for rankings.",
     "combo_recommendations": {
       "early_game_focus": {
@@ -134,7 +134,7 @@
       }
     ]
   },
-    "pet_race": {
+    "Pet Race": {
       "ChoosingSkillCombinations": {
         "Overview": "Focus on either walking or running strategy to maximize race results. Check peak records to find the best skill combos."
       },
@@ -241,6 +241,146 @@
       "You are matched with players close to your rank; pacing your attempts is beneficial.",
       "Play 3-4 races and take breaks to keep energy meter active.",
       "Save 9-10 races near the end of the day for easier opponents."
+    ]
+  },
+  "School of Athens": {
+    "Goal": "Accumulate Points by defeating opponents in debates and ascend through Debating Halls.",
+    "MaxLevel": 3,
+    "Level3": {
+      "Features": "Face real players who can attack you.",
+      "HPMechanic": "If HP drops to 0, fall back to level 2."
+    }
+  },
+  "Teams": {
+    "Importance": "Joining or creating teams is vital for support and extra points.",
+    "Benefits": [
+      "Call on team members for assistance in battles.",
+      "Earn extra points by helping teammates.",
+      "Higher team rank rewards include Talent Edicts and Honor Medal Chests."
+    ],
+    "Tips": "Coordinate team play with Alliance members to be online simultaneously.",
+    "CaptainBonus": "Creating your own team grants extra rewards as captain."
+  },
+  "DebateScore": {
+    "Definition": "Key metric for damage dealt and HP when defending.",
+    "Calculation": "Based on total Knight Power, updated instantly.",
+    "IncreaseMethod": "Use Gold up to 20 times per day to increase score, cost rises with each use.",
+    "Reset": "Resets daily, so must be built up each day."
+  },
+  "DebatingHalls": {
+    "Levels": 3,
+    "OpponentsPerLevel": {
+      "Level1And2": {
+        "Opponents": ["1 Chest", "1 Master", "2 Professors", "2 Students"]
+      },
+      "Level3": {
+        "Opponents": ["1 Myster Lord", "1 Master", "1 Professor", "2 Students", "1 Chest"]
+      }
+    },
+    "HPIncrease": "Opponent HP increases with each level, making battles harder but rewarding more points."
+  },
+  "BattleMechanics": {
+    "OpponentTypes": {
+      "Students": "Easiest with lowest HP",
+      "Professors": "Moderate difficulty",
+      "Masters": "Hardest with highest HP"
+    },
+    "VictoryCondition": "Your Debate Score must be higher than opponent’s HP.",
+    "RetryWait": "If you fail to defeat an opponent, wait 3 hours before retry or use Avoid to skip.",
+    "Points": {
+      "Earned": "Depends on opponent and debating hall level.",
+      "PartialPoints": "If failed, get points proportional to damage done.",
+      "BonusTeamPoints": "Awarded to all team members on opponent defeat."
+    },
+    "PointsTable": [
+      {"Level":1,"Enemy":"Chest","Individual":100,"Team":0},
+      {"Level":1,"Enemy":"Student","Individual":110,"Team":22},
+      {"Level":1,"Enemy":"Professor Xenophon","Individual":200,"Team":40},
+      {"Level":1,"Enemy":"Master Aristotle","Individual":300,"Team":60},
+      {"Level":2,"Enemy":"Chest","Individual":210,"Team":0},
+      {"Level":2,"Enemy":"Student","Individual":160,"Team":32},
+      {"Level":2,"Enemy":"Professor Hypatia","Individual":440,"Team":88},
+      {"Level":2,"Enemy":"Master Plato","Individual":800,"Team":160},
+      {"Level":3,"Enemy":"Chest","Individual":260,"Team":0},
+      {"Level":3,"Enemy":"Student","Individual":200,"Team":40},
+      {"Level":3,"Enemy":"Professor Zeno","Individual":500,"Team":100},
+      {"Level":3,"Enemy":"Master Socrates","Individual":1000,"Team":200},
+      {"Level":3,"Enemy":"Lord","Individual":440,"Team":88}
+    ]
+  },
+  "MarkingSystem": {
+    "Purpose": "Mark opponents you fail to defeat to let teammates assist.",
+    "Benefits": [
+      "Marked targets can be attacked by teammates without stamina cost.",
+      "You and assisting teammates both gain Event Points on successful defeat."
+    ],
+    "Slots": {
+      "Starting": 1,
+      "Max": 4,
+      "IncreaseMethod": "Spend Gold to increase slots."
+    },
+    "GameplayTip": "After marking and attacking, move on to new targets without waiting."
+  },
+  "Stamina": {
+    "StartingAmount": 30,
+    "Consumption": "1 per explore",
+    "ReplenishRate": "1 every 6 minutes",
+    "Max": 40,
+    "PurchasableItems": [
+      {"Name": "Stamina Elixir", "Amount": 5, "Cost": "100 Gold"},
+      {"Name": "Stamina Feast", "Amount": 5, "AvailableIn": "Item Store / Limited Time Packs"}
+    ]
+  },
+  "Ascension": {
+    "Goal": "Reach Level 3 and earn Certificates by defeating real players.",
+    "Requirement": "Defeat 15 Masters or Professors; 50% chance per explore to encounter them, so ~15 Stamina needed.",
+    "Effect": "Marked opponents are cleared upon ascending.",
+    "AlternativeMethod": {
+      "UsingEurekas": "3 Eurekas can instantly ascend one level.",
+      "EurekasSource": "Found in Truth Scrolls, available through paid packs."
+    },
+    "Level3Protection": {
+      "Duration": "2 minutes",
+      "Effect": "Cannot be attacked but can attack others.",
+      "Strategy": "Save stamina to 40 before ascending and use all during protection."
+    }
+  },
+  "Certificates": {
+    "Purpose": "Determine team ranking.",
+    "WaysToEarn": [
+      "Earn 2 Certificates when ascending to Level 3.",
+      "Earn 1 Certificate by defeating another player."
+    ],
+    "LossCondition": "Lose 1 Certificate if defeated and sent back to Level 2."
+  },
+  "EventScrolls": {
+    "Types": [
+      {
+        "Name": "Wisdom Scrolls",
+        "Use": "Opened with Ordinary Inspiration (earned in-game).",
+        "Rewards": "Moderate random event bonuses."
+      },
+      {
+        "Name": "Truth Scrolls",
+        "Use": "Opened with Divine Inspiration (purchased with real money).",
+        "Rewards": "Better event bonuses including Eurekas."
+      }
+    ],
+    "PossibleRewards": [
+      {"Name": "Debate Buff", "Effect": "Next debate score buff +50%"},
+      {"Name": "Point Buff", "Effect": "Next debate points doubled"},
+      {"Name": "Eureka", "Effect": "3 can be used to ascend instantly"}
+    ]
+  },
+  "AthenianWisdomCurrency": {
+    "Description": "Currency earned from the event store based on debate score.",
+    "SpendOn": [
+      "Talent Edicts",
+      "Lover Gifts",
+      "Banquet Ingredients",
+      "Negotiation Cards",
+      "Book of Sages Shards",
+      "Shield of Glory Shards"
     ]
   }
 }

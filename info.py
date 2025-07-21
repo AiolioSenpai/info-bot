@@ -51,44 +51,170 @@ def get_closest_event(event_name, tips_dict, threshold=60):
     return None
 
 def format_event_response(event_name, event_data):
-    reply = f"You seek knowledge on **{event_name.title()}**... How predictably desperate.\nVery well, here is what you require:\n\n"
-    if isinstance(event_data.get("tips"), str):
-        reply += "**Tips:**\n" + event_data["tips"] + "\n"
-    elif isinstance(event_data.get("tips"), list):
-        reply += "**Tips:**\n"
-        for idx, tip in enumerate(event_data["tips"], 1):
-            reply += f"{idx}. {tip}\n"
+    reply = f"You seek knowledge on **{event_name.title()}**... How predictably desperate.\n"
+
+    # Handle simple tips
+    if "tips" in event_data:
+        tips = event_data["tips"]
+        if isinstance(tips, list):
+            tips_formatted = "\n".join(f"- {tip}" for tip in tips)
+        else:
+            tips_formatted = f"- {tips}"
+        reply += f"\n**Tips:**\n{tips_formatted}\n"
     else:
-        reply += "**Tips:**\nNo tips available.\n"
-    combos = event_data.get("combo_recommendations", {})
-    if combos:
-        reply += "\n**Combo Recommendations:**\n"
-        for strategy, combo in combos.items():
-            reply += f"- **{combo['strategy']}**\n"
-            if "masks" in combo:
-                if isinstance(combo.get("masks"), list):
-                    masks = ", ".join(combo["masks"])
+        reply += "\n**Tips:**\nNo tips available.\n"
+
+    # Handle combo recommendations
+    if "combo_recommendations" in event_data:
+        combos = event_data["combo_recommendations"]
+        combos_formatted = "\n".join(f"- {combo}" for combo in combos)
+        reply += f"\n**Combo Recommendations:**\n{combos_formatted}\n"
+
+    # Handle pet race
+    if event_name.lower() == "pet race":
+        reply += (
+            "\n**Note:** 🐇🐢 For the Pet Race, stamina management is critical. "
+            "Focus on synergy and timing for your best pets."
+        )
+
+    # Handle School of Athens
+    if event_name.lower() == "school of athens":
+        reply += "\n**📜 School of Athens Event Details:**\n"
+
+        # Basic goal and level
+        reply += f"- Goal: {event_data.get('Goal', 'N/A')}\n"
+        reply += f"- Max Level: {event_data.get('MaxLevel', 'N/A')}\n"
+
+        # Level 3 details
+        level3 = event_data.get("Level3", {})
+        if level3:
+            reply += "**Level 3 Details:**\n"
+            for k, v in level3.items():
+                reply += f"  - {k}: {v}\n"
+
+        # Teams
+        teams = event_data.get("Teams", {})
+        if teams:
+            reply += "\n**Teams:**\n"
+            for k, v in teams.items():
+                if isinstance(v, list):
+                    reply += f"- {k}:\n"
+                    for item in v:
+                        reply += f"  - {item}\n"
                 else:
-                    masks = combo["masks"]
-                reply += f"  - Masks: {masks}\n"
-            reply += f"  - Remark: {combo['remark']}\n"
-    if event_name.lower() == "pet_race":
-        reply += "\n**Pet Race Strategies:**\n"
-        for sub_event, sub_data in event_data.items():
-            if isinstance(sub_data, dict):
-                for strategy, strategy_data in sub_data.items():
-                    if isinstance(strategy_data, dict):
-                        reply += f"- **{strategy}**\n"
-                        if "Skills" in strategy_data:
-                            reply += f"  - Skills: {', '.join(strategy_data['Skills'])}\n"
-                        if "RecommendedSkills" in strategy_data:
-                            reply += f"  - Recommended Skills: {', '.join(strategy_data['RecommendedSkills'])}\n"
-                        if "Tips" in strategy_data:
-                            reply += "  - Tips:\n"
-                            for idx, tip in enumerate(strategy_data["Tips"], 1):
-                                reply += f"    {idx}. {tip}\n"
-    reply += "\nDo try not to waste this information, as you so often waste opportunities."
-    print("Response to send:", repr(reply))
+                    reply += f"- {k}: {v}\n"
+
+        # DebateScore
+        debate_score = event_data.get("DebateScore", {})
+        if debate_score:
+            reply += "\n**Debate Score:**\n"
+            for k, v in debate_score.items():
+                reply += f"- {k}: {v}\n"
+
+        # DebatingHalls
+        debating_halls = event_data.get("DebatingHalls", {})
+        if debating_halls:
+            reply += "\n**Debating Halls:**\n"
+            for k, v in debating_halls.items():
+                reply += f"- {k}: {v}\n"
+
+        # BattleMechanics PointsTable
+        battle_mech = event_data.get("BattleMechanics", {})
+        if battle_mech:
+            reply += "\n**Battle Mechanics:**\n"
+            for k, v in battle_mech.items():
+                if k != "PointsTable":
+                    if isinstance(v, dict):
+                        reply += f"- {k}:\n"
+                        for sub_k, sub_v in v.items():
+                            reply += f"  - {sub_k}: {sub_v}\n"
+                    else:
+                        reply += f"- {k}: {v}\n"
+
+            # PointsTable formatting
+            points_table = battle_mech.get("PointsTable", [])
+            if points_table:
+                reply += "\n**Points Table:**\n"
+                for entry in points_table:
+                    line = ", ".join(f"{k}: {v}" for k, v in entry.items())
+                    reply += f"- {line}\n"
+
+        # MarkingSystem
+        marking_system = event_data.get("MarkingSystem", {})
+        if marking_system:
+            reply += "\n**Marking System:**\n"
+            for k, v in marking_system.items():
+                if isinstance(v, list):
+                    reply += f"- {k}:\n"
+                    for item in v:
+                        reply += f"  - {item}\n"
+                elif isinstance(v, dict):
+                    reply += f"- {k}:\n"
+                    for sub_k, sub_v in v.items():
+                        reply += f"  - {sub_k}: {sub_v}\n"
+                else:
+                    reply += f"- {k}: {v}\n"
+
+        # Stamina
+        stamina = event_data.get("Stamina", {})
+        if stamina:
+            reply += "\n**Stamina:**\n"
+            for k, v in stamina.items():
+                reply += f"- {k}: {v}\n"
+
+        # Ascension
+        ascension = event_data.get("Ascension", {})
+        if ascension:
+            reply += "\n**Ascension:**\n"
+            for k, v in ascension.items():
+                if isinstance(v, dict):
+                    reply += f"- {k}:\n"
+                    for sub_k, sub_v in v.items():
+                        reply += f"  - {sub_k}: {sub_v}\n"
+                else:
+                    reply += f"- {k}: {v}\n"
+
+        # Certificates
+        certs = event_data.get("Certificates", {})
+        if certs:
+            reply += "\n**Certificates:**\n"
+            for k, v in certs.items():
+                if isinstance(v, list):
+                    reply += f"- {k}:\n"
+                    for item in v:
+                        reply += f"  - {item}\n"
+                else:
+                    reply += f"- {k}: {v}\n"
+
+        # EventScrolls
+        scrolls = event_data.get("EventScrolls", {})
+        if scrolls:
+            reply += "\n**Event Scrolls:**\n"
+            for k, v in scrolls.items():
+                if isinstance(v, list):
+                    reply += f"- {k}:\n"
+                    for item in v:
+                        if isinstance(item, dict):
+                            sub_line = ", ".join(f"{ik}: {iv}" for ik, iv in item.items())
+                            reply += f"  - {sub_line}\n"
+                        else:
+                            reply += f"  - {item}\n"
+                else:
+                    reply += f"- {k}: {v}\n"
+
+        # AthenianWisdomCurrency
+        awc = event_data.get("AthenianWisdomCurrency", {})
+        if awc:
+            reply += "\n**Athenian Wisdom Currency:**\n"
+            for k, v in awc.items():
+                if isinstance(v, list):
+                    reply += f"- {k}:\n"
+                    for item in v:
+                        reply += f"  - {item}\n"
+                else:
+                    reply += f"- {k}: {v}\n"
+
+    reply += "\nDo try not to waste this information..."
     return reply
 
 def mcgonagall_style_no_match():
