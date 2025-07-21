@@ -5,6 +5,11 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 import re
+import asyncio
+import random
+from datetime import datetime
+
+TIMEZONE_OFFSET = 2  # adjust to match your Hogwarts time if needed
 
 # Load environment variables from .env
 load_dotenv()
@@ -131,6 +136,7 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user}!")
+    bot.loop.create_task(status_loop())
 
 @bot.command(name="tip")
 async def tip(ctx, *, event_name: str):
@@ -200,5 +206,34 @@ async def on_message(message):
                     await message.channel.send(f"❌ Failed to send message: {e}")
             return
     await bot.process_commands(message)
+    
+    
+async def status_loop():
+    day_statuses = [
+        "🪄 Brewing potions in the dungeon",
+        "📚 Reading Advanced Potion-Making",
+        "🧪 Teaching Potions class",
+        "🖤 Staring disapprovingly"
+    ]
+
+    night_statuses = [
+        "🌙 Wandering Hogwarts corridors",
+        "💤 Resting in the dungeon quarters",
+        "🕯️ Watching the stars silently"
+    ]
+
+    while True:
+        hour_utc = datetime.utcnow().hour
+        local_hour = (hour_utc + TIMEZONE_OFFSET) % 24
+
+        if 6 <= local_hour < 22:
+            status_message = random.choice(day_statuses)
+        else:
+            status_message = random.choice(night_statuses)
+
+        activity = discord.Game(status_message)
+        await bot.change_presence(activity=activity)
+
+        await asyncio.sleep(7200)  # update every 2 hours
 
 bot.run(TOKEN)
