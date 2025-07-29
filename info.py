@@ -25,7 +25,26 @@ with open("tips.json") as f:
         if isinstance(data.get("tips"), str):
             data["tips"] = data["tips"].strip()
         elif isinstance(data.get("tips"), list):
-            data["tips"] = [tip.replace('\r', '').strip() for tip in data["tips"]]
+            cleaned = []
+            for tip in data["tips"]:
+                # If it’s a plain string tip
+                if isinstance(tip, str):
+                    cleaned.append(tip.replace('\r', '').strip())
+
+                # If it’s a dict tip with title / details (or anything else)
+                elif isinstance(tip, dict):
+                    cleaned_tip = {}
+                    for k, v in tip.items():
+                        cleaned_tip[k] = (
+                            v.replace('\r', '').strip()
+                            if isinstance(v, str) else v
+                        )
+                    cleaned.append(cleaned_tip)
+
+                # Fallback – just append untouched
+                else:
+                    cleaned.append(tip)
+            data["tips"] = cleaned
         if "combo_recommendations" in data:
             for strategy, combo in data["combo_recommendations"].items():
                 combo["strategy"] = combo["strategy"].replace('\r', '').strip()
