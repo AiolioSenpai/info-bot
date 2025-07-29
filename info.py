@@ -235,14 +235,30 @@ def format_event_response(event_name, event_data):
         
         # Handle Mystery Murder event
     if event_name.lower() == "mystery murder":
-        # Add description
-        description = event_data.get("description", "No description available.")
-        reply += f"\n**Description:**\n{description}\n"
-
-        # Add note if present
-        note = event_data.get("note")
-        if note:
-            reply += f"\n**Note:**\n{note}\n"
+        tips = event_data.get("tips", [])
+        if isinstance(tips, list):
+            tips_formatted = ""
+            for tip in tips:
+                if isinstance(tip, dict):
+                    title = tip.get("title", "No Title")
+                    details = tip.get("details", "")
+                    tips_formatted += f"- **{title}**: {details}\n"
+                else:
+                    tips_formatted += f"- {tip}\n"
+            reply += f"\n**Tips:**\n{tips_formatted}\n"
+        else:
+            reply += "\n**Tips:**\nNo tips available.\n"
+    else:
+        # existing generic tips formatting here
+        if "tips" in event_data:
+            tips = event_data["tips"]
+            if isinstance(tips, list):
+                tips_formatted = "\n".join(f"- {tip}" for tip in tips)
+            else:
+                tips_formatted = f"- {tips}"
+            reply += f"\n**Tips:**\n{tips_formatted}\n"
+        else:
+            reply += "\n**Tips:**\nNo tips available.\n"
 
     reply += "\nDo try not to waste this information..."
     return reply
