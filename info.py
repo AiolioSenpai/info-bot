@@ -73,7 +73,7 @@ def format_event_response(event_name, event_data):
     reply = f"You seek knowledge on **{event_name.title()}**... How predictably desperate.\n"
 
     # Handle simple tips
-    if "tips" in event_data:
+    if "tips" in event_data and event_name.lower() != "mystery murder":
         tips = event_data["tips"]
         if isinstance(tips, list):
             tips_formatted = "\n".join(f"- {tip}" for tip in tips)
