@@ -232,6 +232,17 @@ def format_event_response(event_name, event_data):
                         reply += f"  - {item}\n"
                 else:
                     reply += f"- {k}: {v}\n"
+        
+        # Handle Mystery Murder event
+    if event_name.lower() == "mystery murder":
+        # Add description
+        description = event_data.get("description", "No description available.")
+        reply += f"\n**Description:**\n{description}\n"
+
+        # Add note if present
+        note = event_data.get("note")
+        if note:
+            reply += f"\n**Note:**\n{note}\n"
 
     reply += "\nDo try not to waste this information..."
     return reply
