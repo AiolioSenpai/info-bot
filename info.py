@@ -80,8 +80,6 @@ def format_event_response(event_name, event_data):
         else:
             tips_formatted = f"- {tips}"
         reply += f"\n**Tips:**\n{tips_formatted}\n"
-    else:
-        reply += "\n**Tips:**\nNo tips available.\n"
 
     # Handle combo recommendations
     if "combo_recommendations" in event_data:
