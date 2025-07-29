@@ -382,5 +382,56 @@
       "Book of Sages Shards",
       "Shield of Glory Shards"
     ]
-  }
+  },
+  "mystery murder": {
+  "event": "Mystery Murder",
+  "description": "Strategic guide for success in the King's Choice murder mystery event.",
+  "tips": [
+    {
+      "title": "Enemy Inspection",
+      "details": "Press and hold on an enemy to view your estimated HP loss before engaging them."
+    },
+    {
+      "title": "Clear Every Enemy",
+      "details": "Try to defeat all enemies on the page to maximize coin collection for purchasing buffs."
+    },
+    {
+      "title": "Losing Isn't the End",
+      "details": "If you can’t beat the boss, don’t worry — you’ll keep your buffs and coins after restarting the section."
+    },
+    {
+      "title": "Clue Strategy",
+      "details": "Use mystery clues to reduce tiles next to enemies to 1, then unlock those tiles by targeting a safer space still within range."
+    },
+    {
+      "title": "Key Prioritization",
+      "details": "Keys are essential for advancing levels and earning more points. Focus on collecting them."
+    },
+    {
+      "title": "Tile Efficiency",
+      "details": "Choose tiles that open access to multiple useful adjacent tiles (e.g., keys, buffs) to reduce movement cost."
+    },
+    {
+      "title": "Combat Investment",
+      "details": "Avoid overcommitting to fights. Progression is more valuable than victory in single battles."
+    },
+    {
+      "title": "Power-Up Use",
+      "details": "Items like Black Masks are valuable, especially when aiming to quickly gather keys or evade combat."
+    },
+    {
+      "title": "Dossier Pages",
+      "details": "If you’re collecting dossiers to trade, it’s often worth spending a few extra clues on your current page."
+    },
+    {
+      "title": "Shard Swapping",
+      "details": "Trading shards with others is a useful tactic to get missing items or complete collections."
+    },
+    {
+      "title": "Health Strategy",
+      "details": "Use in-game silver to heal when necessary, but always prioritize keys and progression over perfect health."
+    }
+  ],
+  "note": "Losing health isn’t as important as making progress. Strategic risk is encouraged!"
+}
 }
