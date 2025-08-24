@@ -1,437 +1,437 @@
 {
     "Masquerade Ball": {
-    "tips": "🔹 Gain 2 attempts per 30 min (max 15). Win=100 pts, draw=75, loss=50. +12 for charm lead, +15 for being alliance/server lead.\n🔹 Masks upgrade blue→purple→gold. Choose 1‑2 blues, 2‑3 purples, 1‑2 golds. Balance buffs, debuffs, backups.\n🔹 Test combos in practice: start with Parrot, Gargoyle, Anubis or Chameleon, Owl, Hippogriff + Raccoon/Whale.\n🔹 Don't follow in-game tips blindly—iterate using practice mode and mimic top-ranked players.",
-    "combo_recommendations": {
-      "standard": {
-        "strategy": "Standard",
-        "masks": ["Strengthen Team Mask", "Weaken Opponent Mask", "Call Dance Partner Mask", "Anxiety Mask", "Multi-Action Mask"],
-        "remark": "Collapse when the opponent has high-technique masks."
-      },
-      "all_out_attack": {
-        "strategy": "All-out Attack",
-        "masks": ["Bumblebee/Fox/Kitten", "Black Bear/Buffalo/Elephant", "Racoon/Goblin King/Whale", "Merman/Lion", "Ebon Dragon/Demon/Kraken/Evil Specter"],
-        "remark": "Fair against random sets but may struggle vs well-balanced sets."
-      },
-      "defensive_fortress": {
-        "strategy": "Defensive Fortress",
-        "masks": ["Turtle/Snow Dragon", "Pegasus/Clown Fish/Sheep/Penguin", "Hedgehog/Cerberus/Shark/Wild Boar", "Snow Dragon/Shark/Wild Boar", "Cursed Toad/Angel"],
-        "remark": "Fair against random sets but may struggle vs well-balanced sets."
-      },
-      "hybrid_strategy": {
-        "strategy": "Hybrid Strategy",
-        "masks": ["High Technique Mask", "Owl/Chameleon/Hippogriff/Quetzalcoatl", "Gallic Rooster/Sealion/Thunderbird/Phoenix", "Racoon/Whale/Wild Boar", "Type IV (Purple/Golden) Mask"],
-        "remark": "Use when you set a specific strategy."
-      }
-    }
-  },
+        "tips": "🔹 Gain 2 attempts per 30 min (max 15). Win=100 pts, draw=75, loss=50. +12 for charm lead, +15 for being alliance/server lead.\n🔹 Masks upgrade blue→purple→gold. Choose 1‑2 blues, 2‑3 purples, 1‑2 golds. Balance buffs, debuffs, backups.\n🔹 Test combos in practice: start with Parrot, Gargoyle, Anubis or Chameleon, Owl, Hippogriff + Raccoon/Whale.\n🔹 Don't follow in-game tips blindly—iterate using practice mode and mimic top-ranked players.",
+        "combo_recommendations": {
+            "standard": {
+                "strategy": "Standard",
+                "masks": ["Strengthen Team Mask", "Weaken Opponent Mask", "Call Dance Partner Mask", "Anxiety Mask", "Multi-Action Mask"],
+                "remark": "Collapse when the opponent has high-technique masks."
+            },
+            "all_out_attack": {
+                "strategy": "All-out Attack",
+                "masks": ["Bumblebee/Fox/Kitten", "Black Bear/Buffalo/Elephant", "Racoon/Goblin King/Whale", "Merman/Lion", "Ebon Dragon/Demon/Kraken/Evil Specter"],
+                "remark": "Fair against random sets but may struggle vs well-balanced sets."
+            },
+            "defensive_fortress": {
+                "strategy": "Defensive Fortress",
+                "masks": ["Turtle/Snow Dragon", "Pegasus/Clown Fish/Sheep/Penguin", "Hedgehog/Cerberus/Shark/Wild Boar", "Snow Dragon/Shark/Wild Boar", "Cursed Toad/Angel"],
+                "remark": "Fair against random sets but may struggle vs well-balanced sets."
+            },
+            "hybrid_strategy": {
+                "strategy": "Hybrid Strategy",
+                "masks": ["High Technique Mask", "Owl/Chameleon/Hippogriff/Quetzalcoatl", "Gallic Rooster/Sealion/Thunderbird/Phoenix", "Racoon/Whale/Wild Boar", "Type IV (Purple/Golden) Mask"],
+                "remark": "Use when you set a specific strategy."
+            }
+        }
+    },
     "realm_revival": {
-    "tips": "🎲 **Event Overview**: Realm Revival is a collaborative alliance event where you roll dice, construct and upgrade buildings for rewards and permanent attribute boosts.\n🛡️ **Focus on Key Knights**: Prioritize a few high-talent knights (ideally one per attribute: Strength, Leadership, Charisma, Wisdom). Avoid overspending resources on 2-3 star knights beyond level 50.\n⚡ **Resource Management**:\n- **Stamina**: Save stamina for strategic pushes, especially near event end.\n- **Edicts & Books**: Distribute wisely among your chosen knights focusing on relevant attributes.\n- **Event Cards**: Save valuable cards (like double dice) for bonus windows.\n- **Gold**: Use gold to buy stamina, invest in and garrison buildings.\n🤝 **Alliance Collaboration**:\n- Participate in town construction by using stamina on the event map.\n- Attack higher-level alliance buildings for maximum points.\n🔍 **Gameplay Tips**:\n- **Sabotage**: Move slowly to maximize stops and coins during sabotage; target key buildings like the courthouse.\n- **Raiding**: Prioritize raiding high-level buildings you land on.\n- **Knight Usage**: Use top knights for attacking rather than defense to maximize returns.\n🪙 **F2P Efficiency Tips** (from experienced players):\n- Prioritize **dice collection** (free dailies, store, alliance shop) to maintain consistent event activity.\n- Use **double dice strategically**, preferably when landing near high-value or key buildings.\n- Participate daily in **alliance building upgrades**, even with small stamina, to remain active.\n- **Do not overspend gold unnecessarily** unless targeting top milestones.\n⚠️ **Very Important Server Rules**:\n> 🚫 **In cross-server Realm Revival events, DO NOT raid alliances from our server.**\n> 🚫 If an alliance is chosen to win, do not raid it. Respect server decisions to avoid conflicts and maintain harmony.",
-    "combo_recommendations": {
-      "balanced_growth": {
-        "strategy": "Focus on leveling a small group of high-talent knights while participating daily in building upgrades with your alliance for steady gains.",
-        "remark": "Ideal for F2P and casual players aiming for steady progress without heavy gold use."
-      },
-      "rank_push": {
-        "strategy": "Use gold for extra stamina, utilize double dice and event cards strategically, and target high-level alliance buildings for ranking milestones.",
-        "remark": "Best for players aiming to secure top milestone rewards during the event."
-      },
-      "saboteur_focus": {
-        "strategy": "Use sabotage cards, slow movement for maximum stops, and strategically disrupt opponents while farming coins.",
-        "remark": "Useful for alliances focusing on sabotage for rank disruption."
-      }
+        "tips": "🎲 **Event Overview**: Realm Revival is a collaborative alliance event where you roll dice, construct and upgrade buildings for rewards and permanent attribute boosts.\n🛡️ **Focus on Key Knights**: Prioritize a few high-talent knights (ideally one per attribute: Strength, Leadership, Charisma, Wisdom). Avoid overspending resources on 2-3 star knights beyond level 50.\n⚡ **Resource Management**:\n- **Stamina**: Save stamina for strategic pushes, especially near event end.\n- **Edicts & Books**: Distribute wisely among your chosen knights focusing on relevant attributes.\n- **Event Cards**: Save valuable cards (like double dice) for bonus windows.\n- **Gold**: Use gold to buy stamina, invest in and garrison buildings.\n🤝 **Alliance Collaboration**:\n- Participate in town construction by using stamina on the event map.\n- Attack higher-level alliance buildings for maximum points.\n🔍 **Gameplay Tips**:\n- **Sabotage**: Move slowly to maximize stops and coins during sabotage; target key buildings like the courthouse.\n- **Raiding**: Prioritize raiding high-level buildings you land on.\n- **Knight Usage**: Use top knights for attacking rather than defense to maximize returns.\n🪙 **F2P Efficiency Tips** (from experienced players):\n- Prioritize **dice collection** (free dailies, store, alliance shop) to maintain consistent event activity.\n- Use **double dice strategically**, preferably when landing near high-value or key buildings.\n- Participate daily in **alliance building upgrades**, even with small stamina, to remain active.\n- **Do not overspend gold unnecessarily** unless targeting top milestones.\n⚠️ **Very Important Server Rules**:\n> 🚫 **In cross-server Realm Revival events, DO NOT raid alliances from our server.**\n> 🚫 If an alliance is chosen to win, do not raid it. Respect server decisions to avoid conflicts and maintain harmony.",
+        "combo_recommendations": {
+            "balanced_growth": {
+                "strategy": "Focus on leveling a small group of high-talent knights while participating daily in building upgrades with your alliance for steady gains.",
+                "remark": "Ideal for F2P and casual players aiming for steady progress without heavy gold use."
+            },
+            "rank_push": {
+                "strategy": "Use gold for extra stamina, utilize double dice and event cards strategically, and target high-level alliance buildings for ranking milestones.",
+                "remark": "Best for players aiming to secure top milestone rewards during the event."
+            },
+            "saboteur_focus": {
+                "strategy": "Use sabotage cards, slow movement for maximum stops, and strategically disrupt opponents while farming coins.",
+                "remark": "Useful for alliances focusing on sabotage for rank disruption."
+            }
+        },
+        "gameplay_table": [
+            {
+                "category": "Knight Selection",
+                "details": "Choose 4 high-talent knights (1 per attribute). Avoid heavy investment in low-star knights beyond level 50 for event and long-term gains."
+            },
+            {
+                "category": "Resource Management",
+                "details": "Strategically use stamina, save double dice/event cards for bonuses, and invest gold wisely for stamina/building upgrades."
+            },
+            {
+                "category": "Alliance Collaboration",
+                "details": "Work with your alliance on building upgrades and focus on attacking high-level alliance buildings for efficient point gains."
+            },
+            {
+                "category": "Sabotage & Raiding",
+                "details": "Use slow movement during sabotage to increase stops, prioritize high-level buildings for raiding, and employ sabotage cards on valuable enemy structures."
+            },
+            {
+                "category": "F2P Strategy",
+                "details": "Collect daily dice, use double dice near high-value targets, participate daily, avoid unnecessary gold spends unless aiming for top ranks."
+            },
+            {
+                "category": "Server Rules",
+                "details": "Do not raid alliances from our server during cross-server events. If an alliance is chosen to win, respect it and avoid raiding to maintain server harmony."
+            }
+        ]
     },
-    "gameplay_table": [
-      {
-        "category": "Knight Selection",
-        "details": "Choose 4 high-talent knights (1 per attribute). Avoid heavy investment in low-star knights beyond level 50 for event and long-term gains."
-      },
-      {
-        "category": "Resource Management",
-        "details": "Strategically use stamina, save double dice/event cards for bonuses, and invest gold wisely for stamina/building upgrades."
-      },
-      {
-        "category": "Alliance Collaboration",
-        "details": "Work with your alliance on building upgrades and focus on attacking high-level alliance buildings for efficient point gains."
-      },
-      {
-        "category": "Sabotage & Raiding",
-        "details": "Use slow movement during sabotage to increase stops, prioritize high-level buildings for raiding, and employ sabotage cards on valuable enemy structures."
-      },
-      {
-        "category": "F2P Strategy",
-        "details": "Collect daily dice, use double dice near high-value targets, participate daily, avoid unnecessary gold spends unless aiming for top ranks."
-      },
-      {
-        "category": "Server Rules",
-        "details": "Do not raid alliances from our server during cross-server events. If an alliance is chosen to win, respect it and avoid raiding to maintain server harmony."
-      }
-    ]
-  },
     "Nibelungen Treasure": {
-    "tips": "🪓 **Map Exploration**: Use pickaxes (1 stamina, recovers every 30 min) to mine stones and reveal the map. Each mine grants 2 points. Shared tiles revealed by allies help reduce stamina waste.\n⚔️ **NPC Types**: There are 6 NPC types, higher-level NPCs grant higher points and rewards. Try to prioritize Dwarf Kings and high-level NPCs for better gains.\n🛡️ **Use of Knights**: Each knight can attack once per day. Use 'Orders of Challenge' to reuse knights. You can buff your knights (5%-100% attack) using gold to defeat strong NPCs faster.\n👑 **Defeating Dwarf Kings**: Defeating them resets some tiles back to stones, requiring re-mining. Plan knight usage and stamina carefully when attempting Dwarf Kings.\n🗝️ **Chests and Rewards**: Chests provide points and valuable resources, requiring keys (Bronze, Silver, Gold) obtained by killing NPCs or from the shop.\n🏆 **Optimization Tips**: Steal kills to get kill bonuses, open as many chests as possible, collaborate with server mates for strong NPCs, and use gold buffs strategically if aiming for rankings.",
-    "combo_recommendations": {
-      "early_game_focus": {
-        "strategy": "Focus on mining for steady points while targeting low-mid NPCs to conserve stamina and grow power without overspending badges and gold.",
-        "remark": "Best if you have lower knight power or limited badges."
-      },
-      "rank_push": {
-        "strategy": "Prioritize high-level NPCs (Dwarf Kings/Chiefs) for max points and rewards, steal kills, use badges for knight reuse, and use gold buffs for max damage.",
-        "remark": "Recommended when aiming for top ranks and milestone rewards."
-      },
-      "chest_focus": {
-        "strategy": "Focus on mining towards visible chests, collecting keys from kills or shop to open for extra points and resources.",
-        "remark": "Balances resource growth and event points if not aiming for top rank."
-      }
+        "tips": "🪓 **Map Exploration**: Use pickaxes (1 stamina, recovers every 30 min) to mine stones and reveal the map. Each mine grants 2 points. Shared tiles revealed by allies help reduce stamina waste.\n⚔️ **NPC Types**: There are 6 NPC types, higher-level NPCs grant higher points and rewards. Try to prioritize Dwarf Kings and high-level NPCs for better gains.\n🛡️ **Use of Knights**: Each knight can attack once per day. Use 'Orders of Challenge' to reuse knights. You can buff your knights (5%-100% attack) using gold to defeat strong NPCs faster.\n👑 **Defeating Dwarf Kings**: Defeating them resets some tiles back to stones, requiring re-mining. Plan knight usage and stamina carefully when attempting Dwarf Kings.\n🗝️ **Chests and Rewards**: Chests provide points and valuable resources, requiring keys (Bronze, Silver, Gold) obtained by killing NPCs or from the shop.\n🏆 **Optimization Tips**: Steal kills to get kill bonuses, open as many chests as possible, collaborate with server mates for strong NPCs, and use gold buffs strategically if aiming for rankings.",
+        "combo_recommendations": {
+            "early_game_focus": {
+                "strategy": "Focus on mining for steady points while targeting low-mid NPCs to conserve stamina and grow power without overspending badges and gold.",
+                "remark": "Best if you have lower knight power or limited badges."
+            },
+            "rank_push": {
+                "strategy": "Prioritize high-level NPCs (Dwarf Kings/Chiefs) for max points and rewards, steal kills, use badges for knight reuse, and use gold buffs for max damage.",
+                "remark": "Recommended when aiming for top ranks and milestone rewards."
+            },
+            "chest_focus": {
+                "strategy": "Focus on mining towards visible chests, collecting keys from kills or shop to open for extra points and resources.",
+                "remark": "Balances resource growth and event points if not aiming for top rank."
+            }
+        },
+        "npc_table": [
+            {
+                "level": 6,
+                "name": "Dwarf King",
+                "points_no_kill": 2400,
+                "kill_point": 480,
+                "total_points": 2880,
+                "rewards": ["Golden Key", "Random Book 10k", "Intimacy Chest", "Perfume"]
+            },
+            {
+                "level": 5,
+                "name": "Dwarf Chief",
+                "points_no_kill": 1200,
+                "kill_point": 240,
+                "total_points": 1440,
+                "rewards": ["Golden Key", "Random Book 5k", "Silver Coupon", "Troop Coupon"]
+            },
+            {
+                "level": 4,
+                "name": "Dwarf Soldier",
+                "points_no_kill": 600,
+                "kill_point": 120,
+                "total_points": 720,
+                "rewards": ["Silver Key", "Random Book 1k", "Silver Coupon", "Troop Coupon"]
+            },
+            {
+                "level": 3,
+                "name": "Wretched Knight",
+                "points_no_kill": 400,
+                "kill_point": 80,
+                "total_points": 480,
+                "rewards": ["Silver Key", "Random Book 1k", "Silver Coupon", "Troop Coupon"]
+            },
+            {
+                "level": 2,
+                "name": "Old Ruffian",
+                "points_no_kill": 300,
+                "kill_point": 60,
+                "total_points": 360,
+                "rewards": ["Bronze Key", "Random Book 400", "Silver Coupon", "Troop Coupon"]
+            },
+            {
+                "level": 1,
+                "name": "Young Ruffian",
+                "points_no_kill": 200,
+                "kill_point": 40,
+                "total_points": 240,
+                "rewards": ["Bronze Key", "Random Book 400", "Silver Coupon", "Troop Coupon"]
+            }
+        ]
     },
-    "npc_table": [
-      {
-        "level": 6,
-        "name": "Dwarf King",
-        "points_no_kill": 2400,
-        "kill_point": 480,
-        "total_points": 2880,
-        "rewards": ["Golden Key", "Random Book 10k", "Intimacy Chest", "Perfume"]
-      },
-      {
-        "level": 5,
-        "name": "Dwarf Chief",
-        "points_no_kill": 1200,
-        "kill_point": 240,
-        "total_points": 1440,
-        "rewards": ["Golden Key", "Random Book 5k", "Silver Coupon", "Troop Coupon"]
-      },
-      {
-        "level": 4,
-        "name": "Dwarf Soldier",
-        "points_no_kill": 600,
-        "kill_point": 120,
-        "total_points": 720,
-        "rewards": ["Silver Key", "Random Book 1k", "Silver Coupon", "Troop Coupon"]
-      },
-      {
-        "level": 3,
-        "name": "Wretched Knight",
-        "points_no_kill": 400,
-        "kill_point": 80,
-        "total_points": 480,
-        "rewards": ["Silver Key", "Random Book 1k", "Silver Coupon", "Troop Coupon"]
-      },
-      {
-        "level": 2,
-        "name": "Old Ruffian",
-        "points_no_kill": 300,
-        "kill_point": 60,
-        "total_points": 360,
-        "rewards": ["Bronze Key", "Random Book 400", "Silver Coupon", "Troop Coupon"]
-      },
-      {
-        "level": 1,
-        "name": "Young Ruffian",
-        "points_no_kill": 200,
-        "kill_point": 40,
-        "total_points": 240,
-        "rewards": ["Bronze Key", "Random Book 400", "Silver Coupon", "Troop Coupon"]
-      }
-    ]
-  },
     "Pet Race": {
-      "ChoosingSkillCombinations": {
-        "Overview": "Focus on either walking or running strategy to maximize race results. Check peak records to find the best skill combos."
-      },
-    "WalkingStrategy": {
-      "Strategy1": {
-        "Skills": [
-          "Expert Walker",
-          "Power of Walking",
-          "Eye for an Eye",
-          "Spare No Effort",
-          "Roll of Luck",
-          "Schadenfreude",
-          "Obedience Up"
-        ],
-        "RecommendedSkills": [
-          "Expert Walker",
-          "Power of Walking",
-          "Eye for an Eye",
-          "Obedience Up"
-        ],
-        "Tips": [
-          "Schadenfreude is strong early but becomes less useful as opponents start using Roll of Luck.",
-          "Use a pet with the highest Obedience attribute for better walking speed."
+        "ChoosingSkillCombinations": {
+            "Overview": "Focus on either walking or running strategy to maximize race results. Check peak records to find the best skill combos."
+        },
+        "WalkingStrategy": {
+            "Strategy1": {
+                "Skills": [
+                    "Expert Walker",
+                    "Power of Walking",
+                    "Eye for an Eye",
+                    "Spare No Effort",
+                    "Roll of Luck",
+                    "Schadenfreude",
+                    "Obedience Up"
+                ],
+                "RecommendedSkills": [
+                    "Expert Walker",
+                    "Power of Walking",
+                    "Eye for an Eye",
+                    "Obedience Up"
+                ],
+                "Tips": [
+                    "Schadenfreude is strong early but becomes less useful as opponents start using Roll of Luck.",
+                    "Use a pet with the highest Obedience attribute for better walking speed."
+                ]
+            },
+            "Strategy2": {
+                "MainSkills": [
+                    "Press Forward",
+                    "Power of Walking"
+                ],
+                "SupportingSkills": [
+                    "Expert Walker",
+                    "Eye for an Eye",
+                    "Obedience Up",
+                    "Schadenfreude",
+                    "Roll of Luck"
+                ],
+                "Tips": [
+                    "Avoid trading off Obedience skill if possible.",
+                    "Adjust supporting skills based on your luck in skill study."
+                ]
+            }
+        },
+        "RunningStrategy": {
+            "Strategy1": {
+                "Skills": [
+                    "Full Speed Ahead",
+                    "Opportune Momentum",
+                    "Vitality Supplement",
+                    "Physique Up",
+                    "After Storm",
+                    "Roll of Luck",
+                    "Better and Better",
+                    "Preemptive Strike"
+                ],
+                "Tips": [
+                    "'After Storm' works best with 'Roll of Luck'.",
+                    "'Opportune Momentum', 'Vitality Supplement', and 'Better and Better' make a powerful combo.",
+                    "Use a pet with the highest Physique attribute for best running results."
+                ]
+            },
+            "Strategy2": {
+                "CoreSkills": [
+                    "Full Speed Ahead",
+                    "Long Time Coming"
+                ],
+                "AddOne": [
+                    "Ready for Battle",
+                    "Break The Boundary"
+                ],
+                "FillSkills": [
+                    "Better and Better",
+                    "Vitality Supplement",
+                    "Liveliness Up",
+                    "Roll of Luck",
+                    "After Storm"
+                ],
+                "Tips": [
+                    "Do not mix with 'Opportunity Momentum' or other running skills not listed here.",
+                    "Use this strategy only if you have 'Full Speed Ahead' and 'Long Time Coming'."
+                ]
+            }
+        },
+        "PeakRecord": {
+            "Tips": [
+                "Check the peak record tab frequently to try the best performing skill combinations.",
+                "Mix strategies if your desired skills don’t appear in skill study."
+            ]
+        },
+        "AdditionalStrategy": {
+            "Skills": [
+                "Roll of Luck + Intelligence Trade-off",
+                "Physique Up + Obedience Up",
+                "Eye for an Eye",
+                "After Storm",
+                "Ready for Battle"
+            ],
+            "Tips": [
+                "Roll of Luck helps pets automatically dodge obstacles allowing intelligence trade-off.",
+                "Physique Up and Obedience Up boost running and walking speeds respectively."
+            ]
+        },
+        "BonusTips": [
+            "You are matched with players close to your rank; pacing your attempts is beneficial.",
+            "Play 3-4 races and take breaks to keep energy meter active.",
+            "Save 9-10 races near the end of the day for easier opponents."
         ]
-      },
-      "Strategy2": {
-        "MainSkills": [
-          "Press Forward",
-          "Power of Walking"
+    },
+    "School of Athens": {
+        "Goal": "Accumulate Points by defeating opponents in debates and ascend through Debating Halls.",
+        "MaxLevel": 3,
+        "Level3": {
+            "Features": "Face real players who can attack you.",
+            "HPMechanic": "If HP drops to 0, fall back to level 2."
+        }
+    },
+    "Teams": {
+        "Importance": "Joining or creating teams is vital for support and extra points.",
+        "Benefits": [
+            "Call on team members for assistance in battles.",
+            "Earn extra points by helping teammates.",
+            "Higher team rank rewards include Talent Edicts and Honor Medal Chests."
         ],
-        "SupportingSkills": [
-          "Expert Walker",
-          "Eye for an Eye",
-          "Obedience Up",
-          "Schadenfreude",
-          "Roll of Luck"
-        ],
-        "Tips": [
-          "Avoid trading off Obedience skill if possible.",
-          "Adjust supporting skills based on your luck in skill study."
+        "Tips": "Coordinate team play with Alliance members to be online simultaneously.",
+        "CaptainBonus": "Creating your own team grants extra rewards as captain."
+    },
+    "DebateScore": {
+        "Definition": "Key metric for damage dealt and HP when defending.",
+        "Calculation": "Based on total Knight Power, updated instantly.",
+        "IncreaseMethod": "Use Gold up to 20 times per day to increase score, cost rises with each use.",
+        "Reset": "Resets daily, so must be built up each day."
+    },
+    "DebatingHalls": {
+        "Levels": 3,
+        "OpponentsPerLevel": {
+            "Level1And2": {
+                "Opponents": ["1 Chest", "1 Master", "2 Professors", "2 Students"]
+            },
+            "Level3": {
+                "Opponents": ["1 Myster Lord", "1 Master", "1 Professor", "2 Students", "1 Chest"]
+            }
+        },
+        "HPIncrease": "Opponent HP increases with each level, making battles harder but rewarding more points."
+    },
+    "BattleMechanics": {
+        "OpponentTypes": {
+            "Students": "Easiest with lowest HP",
+            "Professors": "Moderate difficulty",
+            "Masters": "Hardest with highest HP"
+        },
+        "VictoryCondition": "Your Debate Score must be higher than opponent’s HP.",
+        "RetryWait": "If you fail to defeat an opponent, wait 3 hours before retry or use Avoid to skip.",
+        "Points": {
+            "Earned": "Depends on opponent and debating hall level.",
+            "PartialPoints": "If failed, get points proportional to damage done.",
+            "BonusTeamPoints": "Awarded to all team members on opponent defeat."
+        },
+        "PointsTable": [
+            {"Level":1,"Enemy":"Chest","Individual":100,"Team":0},
+            {"Level":1,"Enemy":"Student","Individual":110,"Team":22},
+            {"Level":1,"Enemy":"Professor Xenophon","Individual":200,"Team":40},
+            {"Level":1,"Enemy":"Master Aristotle","Individual":300,"Team":60},
+            {"Level":2,"Enemy":"Chest","Individual":210,"Team":0},
+            {"Level":2,"Enemy":"Student","Individual":160,"Team":32},
+            {"Level":2,"Enemy":"Professor Hypatia","Individual":440,"Team":88},
+            {"Level":2,"Enemy":"Master Plato","Individual":800,"Team":160},
+            {"Level":3,"Enemy":"Chest","Individual":260,"Team":0},
+            {"Level":3,"Enemy":"Student","Individual":200,"Team":40},
+            {"Level":3,"Enemy":"Professor Zeno","Individual":500,"Team":100},
+            {"Level":3,"Enemy":"Master Socrates","Individual":1000,"Team":200},
+            {"Level":3,"Enemy":"Lord","Individual":440,"Team":88}
         ]
-      }
     },
-    "RunningStrategy": {
-      "Strategy1": {
-        "Skills": [
-          "Full Speed Ahead",
-          "Opportune Momentum",
-          "Vitality Supplement",
-          "Physique Up",
-          "After Storm",
-          "Roll of Luck",
-          "Better and Better",
-          "Preemptive Strike"
+    "MarkingSystem": {
+        "Purpose": "Mark opponents you fail to defeat to let teammates assist.",
+        "Benefits": [
+            "Marked targets can be attacked by teammates without stamina cost.",
+            "You and assisting teammates both gain Event Points on successful defeat."
         ],
-        "Tips": [
-          "'After Storm' works best with 'Roll of Luck'.",
-          "'Opportune Momentum', 'Vitality Supplement', and 'Better and Better' make a powerful combo.",
-          "Use a pet with the highest Physique attribute for best running results."
+        "Slots": {
+            "Starting": 1,
+            "Max": 4,
+            "IncreaseMethod": "Spend Gold to increase slots."
+        },
+        "GameplayTip": "After marking and attacking, move on to new targets without waiting."
+    },
+    "Stamina": {
+        "StartingAmount": 30,
+        "Consumption": "1 per explore",
+        "ReplenishRate": "1 every 6 minutes",
+        "Max": 40,
+        "PurchasableItems": [
+            {"Name": "Stamina Elixir", "Amount": 5, "Cost": "100 Gold"},
+            {"Name": "Stamina Feast", "Amount": 5, "AvailableIn": "Item Store / Limited Time Packs"}
         ]
-      },
-      "Strategy2": {
-        "CoreSkills": [
-          "Full Speed Ahead",
-          "Long Time Coming"
+    },
+    "Ascension": {
+        "Goal": "Reach Level 3 and earn Certificates by defeating real players.",
+        "Requirement": "Defeat 15 Masters or Professors; 50% chance per explore to encounter them, so ~15 Stamina needed.",
+        "Effect": "Marked opponents are cleared upon ascending.",
+        "AlternativeMethod": {
+            "UsingEurekas": "3 Eurekas can instantly ascend one level.",
+            "EurekasSource": "Found in Truth Scrolls, available through paid packs."
+        },
+        "Level3Protection": {
+            "Duration": "2 minutes",
+            "Effect": "Cannot be attacked but can attack others.",
+            "Strategy": "Save stamina to 40 before ascending and use all during protection."
+        }
+    },
+    "Certificates": {
+        "Purpose": "Determine team ranking.",
+        "WaysToEarn": [
+            "Earn 2 Certificates when ascending to Level 3.",
+            "Earn 1 Certificate by defeating another player."
         ],
-        "AddOne": [
-          "Ready for Battle",
-          "Break The Boundary"
+        "LossCondition": "Lose 1 Certificate if defeated and sent back to Level 2."
+    },
+    "EventScrolls": {
+        "Types": [
+            {
+                "Name": "Wisdom Scrolls",
+                "Use": "Opened with Ordinary Inspiration (earned in-game).",
+                "Rewards": "Moderate random event bonuses."
+            },
+            {
+                "Name": "Truth Scrolls",
+                "Use": "Opened with Divine Inspiration (purchased with real money).",
+                "Rewards": "Better event bonuses including Eurekas."
+            }
         ],
-        "FillSkills": [
-          "Better and Better",
-          "Vitality Supplement",
-          "Liveliness Up",
-          "Roll of Luck",
-          "After Storm"
-        ],
-        "Tips": [
-          "Do not mix with 'Opportune Momentum' or other running skills not listed here.",
-          "Use this strategy only if you have 'Full Speed Ahead' and 'Long Time Coming'."
+        "PossibleRewards": [
+            {"Name": "Debate Buff", "Effect": "Next debate score buff +50%"},
+            {"Name": "Point Buff", "Effect": "Next debate points doubled"},
+            {"Name": "Eureka", "Effect": "3 can be used to ascend instantly"}
         ]
-      }
     },
-    "PeakRecord": {
-      "Tips": [
-        "Check the peak record tab frequently to try the best performing skill combinations.",
-        "Mix strategies if your desired skills don’t appear in skill study."
-      ]
+    "AthenianWisdomCurrency": {
+        "Description": "Currency earned from the event store based on debate score.",
+        "SpendOn": [
+            "Talent Edicts",
+            "Lover Gifts",
+            "Banquet Ingredients",
+            "Negotiation Cards",
+            "Book of Sages Shards",
+            "Shield of Glory Shards"
+        ]
     },
-    "AdditionalStrategy": {
-      "Skills": [
-        "Roll of Luck + Intelligence Trade-off",
-        "Physique Up + Obedience Up",
-        "Eye for an Eye",
-        "After Storm",
-        "Ready for Battle"
-      ],
-      "Tips": [
-        "Roll of Luck helps pets automatically dodge obstacles allowing intelligence trade-off.",
-        "Physique Up and Obedience Up boost running and walking speeds respectively."
-      ]
-    },
-    "BonusTips": [
-      "You are matched with players close to your rank; pacing your attempts is beneficial.",
-      "Play 3-4 races and take breaks to keep energy meter active.",
-      "Save 9-10 races near the end of the day for easier opponents."
-    ]
-  },
-  "School of Athens": {
-    "Goal": "Accumulate Points by defeating opponents in debates and ascend through Debating Halls.",
-    "MaxLevel": 3,
-    "Level3": {
-      "Features": "Face real players who can attack you.",
-      "HPMechanic": "If HP drops to 0, fall back to level 2."
+    "mystery murder": {
+        "event": "Mystery Murder",
+        "description": "Strategic guide for success in the King's Choice murder mystery event.",
+        "tips": [
+            {
+                "title": "Enemy Inspection",
+                "details": "Press and hold on an enemy to view your estimated HP loss before engaging them."
+            },
+            {
+                "title": "Clear Every Enemy",
+                "details": "Try to defeat all enemies on the page to maximize coin collection for purchasing buffs."
+            },
+            {
+                "title": "Losing Isn't the End",
+                "details": "If you can’t beat the boss, don’t worry — you’ll keep your buffs and coins after restarting the section."
+            },
+            {
+                "title": "Clue Strategy",
+                "details": "Use mystery clues to reduce tiles next to enemies to 1, then unlock those tiles by targeting a safer space still within range."
+            },
+            {
+                "title": "Key Prioritization",
+                "details": "Keys are essential for advancing levels and earning more points. Focus on collecting them."
+            },
+            {
+                "title": "Tile Efficiency",
+                "details": "Choose tiles that open access to multiple useful adjacent tiles (e.g., keys, buffs) to reduce movement cost."
+            },
+            {
+                "title": "Combat Investment",
+                "details": "Avoid overcommitting to fights. Progression is more valuable than victory in single battles."
+            },
+            {
+                "title": "Power-Up Use",
+                "details": "Items like Black Masks are valuable, especially when aiming to quickly gather keys or evade combat."
+            },
+            {
+                "title": "Dossier Pages",
+                "details": "If you’re collecting dossiers to trade, it’s often worth spending a few extra clues on your current page."
+            },
+            {
+                "title": "Shard Swapping",
+                "details": "Trading shards with others is a useful tactic to get missing items or complete collections."
+            },
+            {
+                "title": "Health Strategy",
+                "details": "Use in-game silver to heal when necessary, but always prioritize keys and progression over perfect health."
+            }
+        ],
+        "note": "Losing health isn’t as important as making progress. Strategic risk is encouraged!"
     }
-  },
-  "Teams": {
-    "Importance": "Joining or creating teams is vital for support and extra points.",
-    "Benefits": [
-      "Call on team members for assistance in battles.",
-      "Earn extra points by helping teammates.",
-      "Higher team rank rewards include Talent Edicts and Honor Medal Chests."
-    ],
-    "Tips": "Coordinate team play with Alliance members to be online simultaneously.",
-    "CaptainBonus": "Creating your own team grants extra rewards as captain."
-  },
-  "DebateScore": {
-    "Definition": "Key metric for damage dealt and HP when defending.",
-    "Calculation": "Based on total Knight Power, updated instantly.",
-    "IncreaseMethod": "Use Gold up to 20 times per day to increase score, cost rises with each use.",
-    "Reset": "Resets daily, so must be built up each day."
-  },
-  "DebatingHalls": {
-    "Levels": 3,
-    "OpponentsPerLevel": {
-      "Level1And2": {
-        "Opponents": ["1 Chest", "1 Master", "2 Professors", "2 Students"]
-      },
-      "Level3": {
-        "Opponents": ["1 Myster Lord", "1 Master", "1 Professor", "2 Students", "1 Chest"]
-      }
-    },
-    "HPIncrease": "Opponent HP increases with each level, making battles harder but rewarding more points."
-  },
-  "BattleMechanics": {
-    "OpponentTypes": {
-      "Students": "Easiest with lowest HP",
-      "Professors": "Moderate difficulty",
-      "Masters": "Hardest with highest HP"
-    },
-    "VictoryCondition": "Your Debate Score must be higher than opponent’s HP.",
-    "RetryWait": "If you fail to defeat an opponent, wait 3 hours before retry or use Avoid to skip.",
-    "Points": {
-      "Earned": "Depends on opponent and debating hall level.",
-      "PartialPoints": "If failed, get points proportional to damage done.",
-      "BonusTeamPoints": "Awarded to all team members on opponent defeat."
-    },
-    "PointsTable": [
-      {"Level":1,"Enemy":"Chest","Individual":100,"Team":0},
-      {"Level":1,"Enemy":"Student","Individual":110,"Team":22},
-      {"Level":1,"Enemy":"Professor Xenophon","Individual":200,"Team":40},
-      {"Level":1,"Enemy":"Master Aristotle","Individual":300,"Team":60},
-      {"Level":2,"Enemy":"Chest","Individual":210,"Team":0},
-      {"Level":2,"Enemy":"Student","Individual":160,"Team":32},
-      {"Level":2,"Enemy":"Professor Hypatia","Individual":440,"Team":88},
-      {"Level":2,"Enemy":"Master Plato","Individual":800,"Team":160},
-      {"Level":3,"Enemy":"Chest","Individual":260,"Team":0},
-      {"Level":3,"Enemy":"Student","Individual":200,"Team":40},
-      {"Level":3,"Enemy":"Professor Zeno","Individual":500,"Team":100},
-      {"Level":3,"Enemy":"Master Socrates","Individual":1000,"Team":200},
-      {"Level":3,"Enemy":"Lord","Individual":440,"Team":88}
-    ]
-  },
-  "MarkingSystem": {
-    "Purpose": "Mark opponents you fail to defeat to let teammates assist.",
-    "Benefits": [
-      "Marked targets can be attacked by teammates without stamina cost.",
-      "You and assisting teammates both gain Event Points on successful defeat."
-    ],
-    "Slots": {
-      "Starting": 1,
-      "Max": 4,
-      "IncreaseMethod": "Spend Gold to increase slots."
-    },
-    "GameplayTip": "After marking and attacking, move on to new targets without waiting."
-  },
-  "Stamina": {
-    "StartingAmount": 30,
-    "Consumption": "1 per explore",
-    "ReplenishRate": "1 every 6 minutes",
-    "Max": 40,
-    "PurchasableItems": [
-      {"Name": "Stamina Elixir", "Amount": 5, "Cost": "100 Gold"},
-      {"Name": "Stamina Feast", "Amount": 5, "AvailableIn": "Item Store / Limited Time Packs"}
-    ]
-  },
-  "Ascension": {
-    "Goal": "Reach Level 3 and earn Certificates by defeating real players.",
-    "Requirement": "Defeat 15 Masters or Professors; 50% chance per explore to encounter them, so ~15 Stamina needed.",
-    "Effect": "Marked opponents are cleared upon ascending.",
-    "AlternativeMethod": {
-      "UsingEurekas": "3 Eurekas can instantly ascend one level.",
-      "EurekasSource": "Found in Truth Scrolls, available through paid packs."
-    },
-    "Level3Protection": {
-      "Duration": "2 minutes",
-      "Effect": "Cannot be attacked but can attack others.",
-      "Strategy": "Save stamina to 40 before ascending and use all during protection."
-    }
-  },
-  "Certificates": {
-    "Purpose": "Determine team ranking.",
-    "WaysToEarn": [
-      "Earn 2 Certificates when ascending to Level 3.",
-      "Earn 1 Certificate by defeating another player."
-    ],
-    "LossCondition": "Lose 1 Certificate if defeated and sent back to Level 2."
-  },
-  "EventScrolls": {
-    "Types": [
-      {
-        "Name": "Wisdom Scrolls",
-        "Use": "Opened with Ordinary Inspiration (earned in-game).",
-        "Rewards": "Moderate random event bonuses."
-      },
-      {
-        "Name": "Truth Scrolls",
-        "Use": "Opened with Divine Inspiration (purchased with real money).",
-        "Rewards": "Better event bonuses including Eurekas."
-      }
-    ],
-    "PossibleRewards": [
-      {"Name": "Debate Buff", "Effect": "Next debate score buff +50%"},
-      {"Name": "Point Buff", "Effect": "Next debate points doubled"},
-      {"Name": "Eureka", "Effect": "3 can be used to ascend instantly"}
-    ]
-  },
-  "AthenianWisdomCurrency": {
-    "Description": "Currency earned from the event store based on debate score.",
-    "SpendOn": [
-      "Talent Edicts",
-      "Lover Gifts",
-      "Banquet Ingredients",
-      "Negotiation Cards",
-      "Book of Sages Shards",
-      "Shield of Glory Shards"
-    ]
-  },
-  "mystery murder": {
-  "event": "Mystery Murder",
-  "description": "Strategic guide for success in the King's Choice murder mystery event.",
-  "tips": [
-    {
-      "title": "Enemy Inspection",
-      "details": "Press and hold on an enemy to view your estimated HP loss before engaging them."
-    },
-    {
-      "title": "Clear Every Enemy",
-      "details": "Try to defeat all enemies on the page to maximize coin collection for purchasing buffs."
-    },
-    {
-      "title": "Losing Isn't the End",
-      "details": "If you can’t beat the boss, don’t worry — you’ll keep your buffs and coins after restarting the section."
-    },
-    {
-      "title": "Clue Strategy",
-      "details": "Use mystery clues to reduce tiles next to enemies to 1, then unlock those tiles by targeting a safer space still within range."
-    },
-    {
-      "title": "Key Prioritization",
-      "details": "Keys are essential for advancing levels and earning more points. Focus on collecting them."
-    },
-    {
-      "title": "Tile Efficiency",
-      "details": "Choose tiles that open access to multiple useful adjacent tiles (e.g., keys, buffs) to reduce movement cost."
-    },
-    {
-      "title": "Combat Investment",
-      "details": "Avoid overcommitting to fights. Progression is more valuable than victory in single battles."
-    },
-    {
-      "title": "Power-Up Use",
-      "details": "Items like Black Masks are valuable, especially when aiming to quickly gather keys or evade combat."
-    },
-    {
-      "title": "Dossier Pages",
-      "details": "If you’re collecting dossiers to trade, it’s often worth spending a few extra clues on your current page."
-    },
-    {
-      "title": "Shard Swapping",
-      "details": "Trading shards with others is a useful tactic to get missing items or complete collections."
-    },
-    {
-      "title": "Health Strategy",
-      "details": "Use in-game silver to heal when necessary, but always prioritize keys and progression over perfect health."
-    }
-  ],
-  "note": "Losing health isn’t as important as making progress. Strategic risk is encouraged!"
-}
 }
